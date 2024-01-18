@@ -11,7 +11,6 @@ interface List {
 
 export default class FullList implements List {
 	static instance: FullList = new FullList();
-
 	private constructor(private _list: ListItem[] = []) {}
 
 	get list(): ListItem[] {
@@ -26,12 +25,12 @@ export default class FullList implements List {
 			JSON.parse(storedList);
 
 		parsedList.forEach((itemObj) => {
-			const newlistItem = new ListItem(
+			const newListItem = new ListItem(
 				itemObj._id,
 				itemObj._item,
 				itemObj._checked
 			);
-			FullList.instance.addItem(newlistItem);
+			FullList.instance.addItem(newListItem);
 		});
 	}
 
